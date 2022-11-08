@@ -96,10 +96,12 @@ async def ig(a: str):
     )
     hp = "html.parser"
     bp1, cp, lp, pi, lta, otb, gmi, ilu, src, lui, pp, cc = F.split(" ")
+    f = []
     s = BeautifulSoup(b, hp)
     d = s.find(lui, class_=bp1)
+    if not d:
+        return f
     e = d.find_all(ilu)
-    f = []
     for g in e:
         p = g.find(gmi, class_=pi)
         j = g.find(otb, class_=lp).text.strip()
