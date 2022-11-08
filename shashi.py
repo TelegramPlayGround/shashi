@@ -63,6 +63,7 @@ async def fetch_website(
             )
             second_response = await one_response.text()
         except:  # noqa: E722
+            LOGGER("io").exception(msg="why?")
             return False
     # LOGGER(__name__).info(second_response)
     return second_response
@@ -94,7 +95,6 @@ async def ig(a: str):
             H: G
         }
     )
-    LOGGER("io").info(b)
     hp = "html.parser"
     bp1, cp, lp, pi, lta, otb, gmi, ilu, src, lui, pp, cc = F.split(" ")
     s = BeautifulSoup(b, hp)
