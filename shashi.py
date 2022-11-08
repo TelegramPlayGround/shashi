@@ -85,14 +85,17 @@ def get_config(name: str, d_v=None, should_prompt=False):
 
 async def ig(a: str):
     io = "https://t.me/ReQuestChat"
+    F = get_config("F", "A B C D E F A B C D E F")
+    G = get_config("G", "G")
+    H = get_config("H", "H")
     b = await fetch_website(
         a,
         {
-            "User-Agent": f"[{io}](like TelegramBot)",
+            H: G
         }
     )
+    LOGGER("io").info(b)
     hp = "html.parser"
-    F = get_config("F", "A B C D E F A B C D E F")
     bp1, cp, lp, pi, lta, otb, gmi, ilu, src, lui, pp, cc = F.split(" ")
     s = BeautifulSoup(b, hp)
     d = s.find(lui, class_=bp1)

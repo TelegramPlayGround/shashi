@@ -1,7 +1,7 @@
 on:
   workflow_dispatch: {} # Allow manually kicking off builds
   schedule:
-    - cron:  '0 */5 * * *'
+    - cron:  '0 0 * * *'
 name: TEST JOB (maybe ?Forums)
 jobs:
   build:
