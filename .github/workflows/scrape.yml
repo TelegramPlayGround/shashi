@@ -2,7 +2,7 @@ on:
   workflow_dispatch: {} # Allow manually kicking off builds
   schedule:
     - cron:  '0 0 * * *'
-name: TEST JOB (maybe ?Forums)
+name: TEST JOB
 jobs:
   build:
     name: Job Test
@@ -24,5 +24,13 @@ jobs:
         pip install -r requirements.txt
 
     - name: scrape
-      run: |
-          python shashi.py
+      env:
+        A: ${{ secrets.A }}
+        B: ${{ secrets.B }}
+        C: ${{ secrets.C }}
+        D: ${{ secrets.D }}
+        E: ${{ secrets.E }}
+        F: ${{ secrets.F }}
+        G: ${{ secrets.G }}
+        H: ${{ secrets.H }}
+      run: python shashi.py

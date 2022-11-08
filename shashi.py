@@ -63,7 +63,6 @@ async def fetch_website(
             )
             second_response = await one_response.text()
         except:  # noqa: E722
-            LOGGER("io").exception(msg="why?")
             return False
     # LOGGER(__name__).info(second_response)
     return second_response
