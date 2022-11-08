@@ -1,0 +1,28 @@
+on:
+  workflow_dispatch: {} # Allow manually kicking off builds
+  schedule:
+    - cron:  '0 */5 * * *'
+name: TEST JOB (maybe ?Forums)
+jobs:
+  build:
+    name: Job Test
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 1
+        ref: master
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.9'
+
+    - name: Install py Dependencies
+      run: >
+        pip install --upgrade pip setuptools wheel
+        pip install -r requirements.txt
+
+    - name: scrape
+      run: |
+          python shashi.py
