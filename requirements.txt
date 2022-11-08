@@ -1,0 +1,6 @@
+# GET / POST network requests
+asyncio==3.4.3
+aiohttp==3.7.4
+
+# web scrapping tools
+beautifulsoup4==4.11.1
